@@ -1,0 +1,35 @@
+version: "3"
+services:
+  lb01:
+    container_name: lb01
+    hostname: lb01
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-ssh-server
+  app01:
+    container_name: app01
+    hostname: app01
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-ssh-server
+  app02:
+    container_name: app02
+    hostname: app02
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-ssh-server
+  db01:
+    container_name: db01
+    hostname: db01
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-ssh-server
+  control:
+    container_name: control
+    hostname: control
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-control
+    entrypoint: tail -f /dev/null
+    volumes: 
+      - /c/Users/Phil/git/ansible:/opt/ansible

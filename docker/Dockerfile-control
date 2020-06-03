@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+    fish \
+    ansible \
+    vim \
+    curl \
+    sshpass
+
+WORKDIR /opt/ansible
