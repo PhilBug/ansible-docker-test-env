@@ -32,4 +32,4 @@ services:
       dockerfile: Dockerfile-control
     entrypoint: tail -f /dev/null
     volumes: 
-      - /c/Users/Phil/git/ansible:/opt/ansible
+      - ./:/opt/ansible

@@ -1,12 +1,17 @@
 FROM ubuntu:latest
 
+ENV ANSIBLE_VERSION=4.5.0
+
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
     fish \
-    ansible \
     vim \
     curl \
-    sshpass
+    sshpass \
+    python3-pip \
+    python3
+
+RUN pip3 install --no-cache-dir ansible==${ANSIBLE_VERSION}
 
 WORKDIR /opt/ansible
