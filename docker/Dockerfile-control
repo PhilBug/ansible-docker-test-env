@@ -10,8 +10,8 @@ RUN apt-get update && \
     curl \
     sshpass \
     python3-pip \
-    python3
+    git
 
-RUN pip3 install --no-cache-dir ansible==${ANSIBLE_VERSION}
+RUN pip3 install --no-cache-dir ansible==${ANSIBLE_VERSION} ansible-lint
 
 WORKDIR /opt/ansible

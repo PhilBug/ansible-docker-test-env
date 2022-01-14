@@ -30,6 +30,7 @@ services:
     build:
       context: ./docker
       dockerfile: Dockerfile-control
-    entrypoint: tail -f /dev/null
+    working_dir: /opt/ansible
+    # entrypoint: tail -f /dev/null
     volumes: 
       - ./:/opt/ansible
